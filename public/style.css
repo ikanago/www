@@ -1,0 +1,52 @@
+body {
+    background-color: #323232;
+    color: #f0f0f0;
+    font-family: "Noto Sans Mono", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, monospace, sans-serif;
+    font-size: 24px;
+    margin: 0;
+    padding: 0;
+}
+
+
+main {
+    max-width: 512px;
+    margin: 0 auto;
+    padding: 1rem 0;
+    text-align: left;
+}
+
+h1,
+h2,
+h3 {
+    margin-top: 1rem;
+    margin-bottom: 0;
+}
+
+h1 {
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: #e9512f;
+}
+
+a {
+    color: #00ccdd;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+}
+
+#public-key {
+    font-size: 0.8rem;
+    word-break: break-all;
+}
+
+/*
+@media (max-width: 512px) {
+    body {
+        font-size: 20px;
+    }
+}
+*/

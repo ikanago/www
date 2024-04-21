@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ikanago.dev</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <img src="./assets/icon.png" alt="Icon" width="512px">
+        <h1>ikanago</h1>
+        <h2>Bio</h2>
+        <dl>
+            <dt>Twitter</dt>
+            <dd><a href="https://twitter.com/ikanag0" target="_blank">@ikanag0</a></dd>
+            <dt>GitHub</dt>
+            <dd><a href="https://github.com/ikanago" target="_blank">ikanago</a></dd>
+            <dt>Blog</dt>
+            <dd><a href="https://blog.ikanago.dev" target="_blank">blog.ikanago.dev</a></dd>
+            <dt>Weekly</dt>
+            <dd><a href="https://ikanago.hatenablog.jp/" target="_blank">よくばりジェット気流</a></dd>
+            <dt>PGP Key</dt>
+            <dd><a href="https://keys.openpgp.org/search?q=895750641E034E69" target="_blank">826E FA3C 9CAC 15FA
+                    E8C3 820F 8957 5064 1E03 4E69</a></dd>
+            <dd>
+                <details>
+                    <summary>Show Public Key</summary>
+                    <pre id="public-key"></pre>
+                </details>
+            </dd>
+        </dl>
+        <h2>Interest</h2>
+        <ul>
+            <li>Rust</li>
+            <li>Humanities</li>
+            <li>Music</li>
+            <li>Piano</li>
+        </ul>
+        <script>
+            const keyUrl = "https://keys.openpgp.org/vks/v1/by-fingerprint/826EFA3C9CAC15FAE8C3820F895750641E034E69";
+
+            const preElement = document.getElementById('public-key');
+            const toggleButton = document.getElementById('toggle-key');
+
+            fetch(keyUrl)
+                .then(response => response.text())
+                .then(publicKey => {
+                    preElement.textContent = publicKey;
+                })
+                .catch(error => {
+                    console.error('Error fetching public key:', error);
+                });
+
+            toggleButton.addEventListener('click', () => {
+                preElement.classList.toggle('expanded');
+                toggleButton.textContent = preElement.classList.contains('expanded') ? 'Hide Public Key' : 'Show Public Key';
+            });
+        </script>
+</body>
+
+</html>
