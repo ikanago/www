@@ -1,10 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ikanago.dev</title>
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ikanago.dev">
+    <meta property="og:title" content="ikanago.dev">
+    <meta property="og:description" content="ikanago.dev top">
+    <meta property="og:image" content="https://ikanago.dev/assets/icon.png">
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:creator" content="@ikanag0" />
+    <meta property="twitter:title" content=ikanago.dev />
+    <meta property="twitter:description" content="ikanago.dev top" />
+    <meta property="twitter:image" content="https://ikanago.dev/assets/icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
+    <link rel="manifest" href="/assets/site.webmanifest" />
+    <link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#323232" />
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,8 +43,11 @@
             <dt>Weekly</dt>
             <dd><a href="https://ikanago.hatenablog.jp/" target="_blank">よくばりジェット気流</a></dd>
             <dt>PGP Key</dt>
-            <dd><a href="https://keys.openpgp.org/search?q=895750641E034E69" target="_blank">826E FA3C 9CAC 15FA
-                    E8C3 820F 8957 5064 1E03 4E69</a></dd>
+            <dd>
+                <a href="https://keys.openpgp.org/search?q=895750641E034E69" target="_blank">
+                    826E FA3C 9CAC 15FA E8C3 820F 8957 5064 1E03 4E69
+                </a>
+            </dd>
             <dd>
                 <details>
                     <summary>Show Public Key</summary>
@@ -46,7 +66,6 @@
             const keyUrl = "https://keys.openpgp.org/vks/v1/by-fingerprint/826EFA3C9CAC15FAE8C3820F895750641E034E69";
 
             const preElement = document.getElementById('public-key');
-            const toggleButton = document.getElementById('toggle-key');
 
             fetch(keyUrl)
                 .then(response => response.text())
@@ -56,11 +75,6 @@
                 .catch(error => {
                     console.error('Error fetching public key:', error);
                 });
-
-            toggleButton.addEventListener('click', () => {
-                preElement.classList.toggle('expanded');
-                toggleButton.textContent = preElement.classList.contains('expanded') ? 'Hide Public Key' : 'Show Public Key';
-            });
         </script>
 </body>
 
